@@ -1,0 +1,6 @@
+[submodule "sockit_spi"]
+	path = sockit_spi
+	url = git://github.com/jeras/sockit_spi.git
+[submodule "sockit_owm"]
+	path = sockit_owm
+	url = git://github.com/jeras/sockit_owm.git
