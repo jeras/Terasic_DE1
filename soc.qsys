@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element $${FILENAME}
+   {
+   }
+   element jtag_uart.avalon_jtag_slave
+   {
+      datum baseAddress
+      {
+         value = "16785552";
+         type = "long";
+      }
+   }
+   element clk_50MHz
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element epcs
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{}";
+         type = "String";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element epcs.epcs_control_port
+   {
+      datum baseAddress
+      {
+         value = "16783360";
+         type = "long";
+      }
+   }
+   element nios2.jtag_debug_module
+   {
+      datum baseAddress
+      {
+         value = "16781312";
+         type = "long";
+      }
+   }
+   element jtag_uart
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element nios2
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
+   element pio_key
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element pio_led_g
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element pio_led_r
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element pio_seg7
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element pio_sw
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element pio_key.s1
+   {
+      datum baseAddress
+      {
+         value = "16785520";
+         type = "long";
+      }
+   }
+   element pio_led_g.s1
+   {
+      datum baseAddress
+      {
+         value = "16785488";
+         type = "long";
+      }
+   }
+   element sdram.s1
+   {
+      datum baseAddress
+      {
+         value = "8388608";
+         type = "long";
+      }
+   }
+   element uart.s1
+   {
+      datum baseAddress
+      {
+         value = "16785408";
+         type = "long";
+      }
+   }
+   element timer.s1
+   {
+      datum baseAddress
+      {
+         value = "16785440";
+         type = "long";
+      }
+   }
+   element pio_led_r.s1
+   {
+      datum baseAddress
+      {
+         value = "16785504";
+         type = "long";
+      }
+   }
+   element pio_seg7.s1
+   {
+      datum baseAddress
+      {
+         value = "16785472";
+         type = "long";
+      }
+   }
+   element pio_sw.s1
+   {
+      datum baseAddress
+      {
+         value = "16785536";
+         type = "long";
+      }
+   }
+   element sdram
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+      datum megawizard_uipreferences
+      {
+         value = "{}";
+         type = "String";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element timer
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element uart
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="deviceFamily" value="CYCLONEII" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="DE1_soc_nios2.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="1" />
+ <parameter name="timeStamp" value="1308402109777" />
+ <interface name="clk" internal="clk_50MHz.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_50MHz.clk_in_reset" type="reset" dir="end" />
+ <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
+ <interface
+   name="uart_io"
+   internal="uart.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pio_seg7_o"
+   internal="pio_seg7.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pio_led_g_o"
+   internal="pio_led_g.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pio_led_r_o"
+   internal="pio_led_r.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pio_key_i"
+   internal="pio_key.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="pio_sw_i"
+   internal="pio_sw.external_connection"
+   type="conduit"
+   dir="end" />
+ <module kind="clock_source" version="11.0" enabled="1" name="clk_50MHz">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module kind="altera_nios2_qsys" version="11.0" enabled="1" name="nios2">
+  <parameter name="setting_showUnpublishedSettings" value="false" />
+  <parameter name="setting_showInternalSettings" value="false" />
+  <parameter name="setting_preciseSlaveAccessErrorException" value="false" />
+  <parameter name="setting_preciseIllegalMemAccessException" value="false" />
+  <parameter name="setting_preciseDivisionErrorException" value="false" />
+  <parameter name="setting_performanceCounter" value="false" />
+  <parameter name="setting_illegalMemAccessDetection" value="false" />
+  <parameter name="setting_illegalInstructionsTrap" value="false" />
+  <parameter name="setting_fullWaveformSignals" value="false" />
+  <parameter name="setting_extraExceptionInfo" value="false" />
+  <parameter name="setting_exportPCB" value="false" />
+  <parameter name="setting_debugSimGen" value="false" />
+  <parameter name="setting_clearXBitsLDNonBypass" value="true" />
+  <parameter name="setting_bit31BypassDCache" value="true" />
+  <parameter name="setting_bigEndian" value="false" />
+  <parameter name="setting_bhtIndexPcOnly" value="false" />
+  <parameter name="setting_avalonDebugPortPresent" value="false" />
+  <parameter name="setting_alwaysEncrypt" value="true" />
+  <parameter name="setting_allowFullAddressRange" value="false" />
+  <parameter name="setting_activateTrace" value="true" />
+  <parameter name="setting_activateTestEndChecker" value="false" />
+  <parameter name="setting_activateMonitors" value="true" />
+  <parameter name="setting_activateModelChecker" value="false" />
+  <parameter name="setting_HDLSimCachesCleared" value="true" />
+  <parameter name="setting_HBreakTest" value="false" />
+  <parameter name="muldiv_divider" value="false" />
+  <parameter name="mpu_useLimit" value="false" />
+  <parameter name="mpu_enabled" value="false" />
+  <parameter name="mmu_enabled" value="false" />
+  <parameter name="mmu_autoAssignTlbPtrSz" value="true" />
+  <parameter name="manuallyAssignCpuID" value="false" />
+  <parameter name="debug_triggerArming" value="true" />
+  <parameter name="debug_embeddedPLL" value="true" />
+  <parameter name="debug_debugReqSignals" value="false" />
+  <parameter name="debug_assignJtagInstanceID" value="false" />
+  <parameter name="dcache_omitDataMaster" value="false" />
+  <parameter name="cpuReset" value="false" />
+  <parameter name="is_hardcopy_compatible" value="false" />
+  <parameter name="setting_shadowRegisterSets" value="0" />
+  <parameter name="mpu_numOfInstRegion" value="8" />
+  <parameter name="mpu_numOfDataRegion" value="8" />
+  <parameter name="mmu_TLBMissExcOffset" value="0" />
+  <parameter name="debug_jtagInstanceID" value="0" />
+  <parameter name="resetOffset" value="0" />
+  <parameter name="exceptionOffset" value="32" />
+  <parameter name="cpuID" value="0" />
+  <parameter name="breakOffset" value="32" />
+  <parameter name="userDefinedSettings" value="" />
+  <parameter name="resetSlave">epcs.epcs_control_port</parameter>
+  <parameter name="mmu_TLBMissExcSlave" value="" />
+  <parameter name="exceptionSlave" value="sdram.s1" />
+  <parameter name="breakSlave">nios2.jtag_debug_module</parameter>
+  <parameter name="setting_perfCounterWidth" value="32" />
+  <parameter name="setting_interruptControllerType" value="Internal" />
+  <parameter name="setting_branchPredictionType" value="Automatic" />
+  <parameter name="setting_bhtPtrSz" value="8" />
+  <parameter name="muldiv_multiplierType" value="EmbeddedMulFast" />
+  <parameter name="mpu_minInstRegionSize" value="12" />
+  <parameter name="mpu_minDataRegionSize" value="12" />
+  <parameter name="mmu_uitlbNumEntries" value="4" />
+  <parameter name="mmu_udtlbNumEntries" value="6" />
+  <parameter name="mmu_tlbPtrSz" value="7" />
+  <parameter name="mmu_tlbNumWays" value="16" />
+  <parameter name="mmu_processIDNumBits" value="8" />
+  <parameter name="impl" value="Fast" />
+  <parameter name="icache_size" value="4096" />
+  <parameter name="icache_ramBlockType" value="Automatic" />
+  <parameter name="icache_numTCIM" value="0" />
+  <parameter name="icache_burstType" value="None" />
+  <parameter name="dcache_bursts" value="false" />
+  <parameter name="debug_level" value="Level1" />
+  <parameter name="debug_OCIOnchipTrace" value="_128" />
+  <parameter name="dcache_size" value="2048" />
+  <parameter name="dcache_ramBlockType" value="Automatic" />
+  <parameter name="dcache_numTCDM" value="0" />
+  <parameter name="dcache_lineSize" value="32" />
+  <parameter name="instAddrWidth" value="25" />
+  <parameter name="dataAddrWidth" value="25" />
+  <parameter name="tightlyCoupledDataMaster0AddrWidth" value="1" />
+  <parameter name="tightlyCoupledDataMaster1AddrWidth" value="1" />
+  <parameter name="tightlyCoupledDataMaster2AddrWidth" value="1" />
+  <parameter name="tightlyCoupledDataMaster3AddrWidth" value="1" />
+  <parameter name="tightlyCoupledInstructionMaster0AddrWidth" value="1" />
+  <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
+  <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
+  <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x800000' end='0x1000000' /><slave name='nios2.jtag_debug_module' start='0x1001000' end='0x1001800' /><slave name='epcs.epcs_control_port' start='0x1001800' end='0x1002000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x800000' end='0x1000000' /><slave name='nios2.jtag_debug_module' start='0x1001000' end='0x1001800' /><slave name='epcs.epcs_control_port' start='0x1001800' end='0x1002000' /><slave name='uart.s1' start='0x1002000' end='0x1002020' /><slave name='timer.s1' start='0x1002020' end='0x1002040' /><slave name='pio_seg7.s1' start='0x1002040' end='0x1002050' /><slave name='pio_led_g.s1' start='0x1002050' end='0x1002060' /><slave name='pio_led_r.s1' start='0x1002060' end='0x1002070' /><slave name='pio_key.s1' start='0x1002070' end='0x1002080' /><slave name='pio_sw.s1' start='0x1002080' end='0x1002090' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1002090' end='0x1002098' /></address-map>]]></parameter>
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="deviceFamilyName" value="Cyclone II" />
+  <parameter name="internalIrqMaskSystemInfo" value="1" />
+  <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
+  <parameter name="deviceFeaturesSystemInfo">M512_MEMORY 0 M4K_MEMORY 1 M9K_MEMORY 0 M20K_MEMORY 0 M144K_MEMORY 0 MRAM_MEMORY 0 MLAB_MEMORY 0 ESB 0 EPCS 1 DSP 0 EMUL 1 HARDCOPY 0 LVDS_IO 0 ADDRESS_STALL 1 TRANSCEIVER_3G_BLOCK 0 TRANSCEIVER_6G_BLOCK 0 DSP_SHIFTER_BLOCK 0</parameter>
+  <parameter name="tightlyCoupledDataMaster0MapParam" value="" />
+  <parameter name="tightlyCoupledDataMaster1MapParam" value="" />
+  <parameter name="tightlyCoupledDataMaster2MapParam" value="" />
+  <parameter name="tightlyCoupledDataMaster3MapParam" value="" />
+  <parameter name="tightlyCoupledInstructionMaster0MapParam" value="" />
+  <parameter name="tightlyCoupledInstructionMaster1MapParam" value="" />
+  <parameter name="tightlyCoupledInstructionMaster2MapParam" value="" />
+  <parameter name="tightlyCoupledInstructionMaster3MapParam" value="" />
+ </module>
+ <module
+   kind="altera_avalon_new_sdram_controller"
+   version="11.0"
+   enabled="1"
+   name="sdram">
+  <parameter name="TAC" value="5.4" />
+  <parameter name="TMRD" value="3" />
+  <parameter name="TRCD" value="20.0" />
+  <parameter name="TRFC" value="70.0" />
+  <parameter name="TRP" value="20.0" />
+  <parameter name="TWR" value="14.0" />
+  <parameter name="casLatency" value="2" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="columnWidth" value="8" />
+  <parameter name="dataWidth" value="16" />
+  <parameter name="generateSimulationModel" value="false" />
+  <parameter name="initNOPDelay" value="0.0" />
+  <parameter name="initRefreshCommands" value="2" />
+  <parameter name="masteredTristateBridgeSlave" value="" />
+  <parameter name="model" value="custom" />
+  <parameter name="numberOfBanks" value="4" />
+  <parameter name="numberOfChipSelects" value="1" />
+  <parameter name="pinsSharedViaTriState" value="false" />
+  <parameter name="powerUpDelay" value="100.0" />
+  <parameter name="refreshPeriod" value="15.625" />
+  <parameter name="registerDataIn" value="true" />
+  <parameter name="rowWidth" value="12" />
+ </module>
+ <module kind="altera_avalon_uart" version="11.0" enabled="1" name="uart">
+  <parameter name="baud" value="115200" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="dataBits" value="8" />
+  <parameter name="fixedBaud" value="true" />
+  <parameter name="parity" value="NONE" />
+  <parameter name="simCharStream" value="" />
+  <parameter name="simInteractiveInputEnable" value="false" />
+  <parameter name="simInteractiveOutputEnable" value="false" />
+  <parameter name="simTrueBaud" value="false" />
+  <parameter name="stopBits" value="1" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="useCtsRts" value="false" />
+  <parameter name="useEopRegister" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+ </module>
+ <module
+   kind="altera_avalon_jtag_uart"
+   version="11.0"
+   enabled="1"
+   name="jtag_uart">
+  <parameter name="allowMultipleConnections" value="false" />
+  <parameter name="hubInstanceID" value="0" />
+  <parameter name="readBufferDepth" value="64" />
+  <parameter name="readIRQThreshold" value="8" />
+  <parameter name="simInputCharacterStream" value="" />
+  <parameter name="simInteractiveOptions">INTERACTIVE_ASCII_OUTPUT</parameter>
+  <parameter name="useRegistersForReadBuffer" value="false" />
+  <parameter name="useRegistersForWriteBuffer" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+  <parameter name="writeBufferDepth" value="64" />
+  <parameter name="writeIRQThreshold" value="8" />
+ </module>
+ <module kind="altera_avalon_timer" version="11.0" enabled="1" name="timer">
+  <parameter name="alwaysRun" value="false" />
+  <parameter name="counterSize" value="32" />
+  <parameter name="fixedPeriod" value="false" />
+  <parameter name="period" value="1" />
+  <parameter name="periodUnits" value="MSEC" />
+  <parameter name="resetOutput" value="false" />
+  <parameter name="snapshot" value="true" />
+  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="timeoutPulseOutput" value="false" />
+  <parameter name="timerPreset" value="CUSTOM" />
+ </module>
+ <module kind="altera_avalon_pio" version="11.0" enabled="1" name="pio_seg7">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="32" />
+ </module>
+ <module
+   kind="altera_avalon_epcs_flash_controller"
+   version="11.0"
+   enabled="1"
+   name="epcs">
+  <parameter name="autoSelectASMIAtom" value="true" />
+  <parameter name="deviceFamilyString" value="Cyclone II" />
+  <parameter name="useASMIAtom" value="true" />
+ </module>
+ <module kind="altera_avalon_pio" version="11.0" enabled="1" name="pio_led_g">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="8" />
+ </module>
+ <module kind="altera_avalon_pio" version="11.0" enabled="1" name="pio_led_r">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="10" />
+ </module>
+ <module kind="altera_avalon_pio" version="11.0" enabled="1" name="pio_key">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="4" />
+ </module>
+ <module kind="altera_avalon_pio" version="11.0" enabled="1" name="pio_sw">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="10" />
+ </module>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.instruction_master"
+   end="nios2.jtag_debug_module">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01001000" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="nios2.jtag_debug_module">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01001000" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="nios2.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="nios2.reset_n" />
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="sdram.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="sdram.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.instruction_master"
+   end="sdram.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00800000" />
+ </connection>
+ <connection kind="avalon" version="11.0" start="nios2.data_master" end="sdram.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x00800000" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="uart.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="uart.reset" />
+ <connection kind="avalon" version="11.0" start="nios2.data_master" end="uart.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01002000" />
+ </connection>
+ <connection kind="interrupt" version="11.0" start="nios2.d_irq" end="uart.irq">
+  <parameter name="irqNumber" value="0" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="jtag_uart.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="jtag_uart.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="jtag_uart.avalon_jtag_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01002090" />
+ </connection>
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="timer.reset" />
+ <connection kind="avalon" version="11.0" start="nios2.data_master" end="timer.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01002020" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_seg7.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="pio_seg7.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="pio_seg7.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01002040" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="epcs.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="epcs.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="epcs.epcs_control_port">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01001800" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.instruction_master"
+   end="epcs.epcs_control_port">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01001800" />
+ </connection>
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="nios2.reset_n" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="sdram.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="uart.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="jtag_uart.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="timer.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="pio_seg7.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="epcs.reset" />
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="timer.clk" />
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_led_g.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="pio_led_g.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="pio_led_g.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="pio_led_g.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01002050" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_led_r.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="pio_led_r.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="pio_led_r.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01002060" />
+ </connection>
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="pio_key.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="pio_key.reset" />
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_key.clk" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="pio_key.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01002070" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_sw.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_50MHz.clk_reset"
+   end="pio_sw.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="pio_sw.reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="pio_sw.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01002080" />
+ </connection>
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="pio_led_r.reset" />
+</system>
