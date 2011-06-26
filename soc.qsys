@@ -16,11 +16,11 @@
    {
       datum baseAddress
       {
-         value = "16785552";
+         value = "17309840";
          type = "long";
       }
    }
-   element clk_50MHz
+   element clk_24MHz
    {
       datum _sortIndex
       {
@@ -50,7 +50,7 @@
    {
       datum baseAddress
       {
-         value = "16783360";
+         value = "17307648";
          type = "long";
       }
    }
@@ -58,7 +58,7 @@
    {
       datum baseAddress
       {
-         value = "16781312";
+         value = "17305600";
          type = "long";
       }
    }
@@ -66,7 +66,7 @@
    {
       datum _sortIndex
       {
-         value = "5";
+         value = "7";
          type = "int";
       }
       datum sopceditor_expanded
@@ -88,11 +88,24 @@
          type = "boolean";
       }
    }
+   element onewire
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
    element pio_key
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "12";
          type = "int";
       }
       datum sopceditor_expanded
@@ -105,7 +118,7 @@
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "10";
          type = "int";
       }
       datum sopceditor_expanded
@@ -118,7 +131,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "11";
          type = "int";
       }
       datum sopceditor_expanded
@@ -131,7 +144,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "9";
          type = "int";
       }
       datum sopceditor_expanded
@@ -144,7 +157,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "13";
          type = "int";
       }
       datum sopceditor_expanded
@@ -153,11 +166,35 @@
          type = "boolean";
       }
    }
-   element uart.s1
+   element pio_key.s1
    {
       datum baseAddress
       {
-         value = "16785408";
+         value = "17309808";
+         type = "long";
+      }
+   }
+   element pio_sw.s1
+   {
+      datum baseAddress
+      {
+         value = "17309824";
+         type = "long";
+      }
+   }
+   element pio_led_r.s1
+   {
+      datum baseAddress
+      {
+         value = "17309792";
+         type = "long";
+      }
+   }
+   element timer.s1
+   {
+      datum baseAddress
+      {
+         value = "17309728";
          type = "long";
       }
    }
@@ -169,43 +206,11 @@
          type = "long";
       }
    }
-   element pio_sw.s1
-   {
-      datum baseAddress
-      {
-         value = "16785536";
-         type = "long";
-      }
-   }
-   element timer.s1
-   {
-      datum baseAddress
-      {
-         value = "16785440";
-         type = "long";
-      }
-   }
-   element pio_led_r.s1
-   {
-      datum baseAddress
-      {
-         value = "16785504";
-         type = "long";
-      }
-   }
    element pio_seg7.s1
    {
       datum baseAddress
       {
-         value = "16785472";
-         type = "long";
-      }
-   }
-   element pio_key.s1
-   {
-      datum baseAddress
-      {
-         value = "16785520";
+         value = "17309760";
          type = "long";
       }
    }
@@ -213,7 +218,15 @@
    {
       datum baseAddress
       {
-         value = "16785488";
+         value = "17309776";
+         type = "long";
+      }
+   }
+   element uart.s1
+   {
+      datum baseAddress
+      {
+         value = "17309696";
          type = "long";
       }
    }
@@ -235,11 +248,37 @@
          type = "boolean";
       }
    }
+   element sram
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
+   element sram_tri
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "0";
+         type = "boolean";
+      }
+   }
    element timer
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "8";
          type = "int";
       }
       datum sopceditor_expanded
@@ -252,13 +291,21 @@
    {
       datum _sortIndex
       {
-         value = "4";
+         value = "6";
          type = "int";
       }
       datum sopceditor_expanded
       {
          value = "0";
          type = "boolean";
+      }
+   }
+   element sram.uas
+   {
+      datum baseAddress
+      {
+         value = "17039360";
+         type = "long";
       }
    }
 }
@@ -274,9 +321,9 @@
  <parameter name="projectName" value="DE1_soc_nios2.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1308405802585" />
- <interface name="clk" internal="clk_50MHz.clk_in" type="clock" dir="end" />
- <interface name="reset" internal="clk_50MHz.clk_in_reset" type="reset" dir="end" />
+ <parameter name="timeStamp" value="1309099710304" />
+ <interface name="clk" internal="clk_24MHz.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_24MHz.clk_in_reset" type="reset" dir="end" />
  <interface name="sdram_wire" internal="sdram.wire" type="conduit" dir="end" />
  <interface
    name="uart_io"
@@ -308,8 +355,10 @@
    internal="pio_sw.external_connection"
    type="conduit"
    dir="end" />
- <module kind="clock_source" version="11.0" enabled="1" name="clk_50MHz">
-  <parameter name="clockFrequency" value="50000000" />
+ <interface name="sram" internal="sram_tri.out" type="conduit" dir="end" />
+ <interface name="onewire" internal="onewire.ext" type="conduit" dir="end" />
+ <module kind="clock_source" version="11.0" enabled="1" name="clk_24MHz">
+  <parameter name="clockFrequency" value="24000000" />
   <parameter name="clockFrequencyKnown" value="true" />
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
@@ -365,7 +414,7 @@
   <parameter name="userDefinedSettings" value="" />
   <parameter name="resetSlave">epcs.epcs_control_port</parameter>
   <parameter name="mmu_TLBMissExcSlave" value="" />
-  <parameter name="exceptionSlave" value="sdram.s1" />
+  <parameter name="exceptionSlave" value="sram.uas" />
   <parameter name="breakSlave">nios2.jtag_debug_module</parameter>
   <parameter name="setting_perfCounterWidth" value="32" />
   <parameter name="setting_interruptControllerType" value="Internal" />
@@ -401,11 +450,11 @@
   <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
   <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x800000' end='0x1000000' /><slave name='nios2.jtag_debug_module' start='0x1001000' end='0x1001800' /><slave name='epcs.epcs_control_port' start='0x1001800' end='0x1002000' /></address-map>]]></parameter>
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x800000' end='0x1000000' /><slave name='nios2.jtag_debug_module' start='0x1001000' end='0x1001800' /><slave name='epcs.epcs_control_port' start='0x1001800' end='0x1002000' /><slave name='uart.s1' start='0x1002000' end='0x1002020' /><slave name='timer.s1' start='0x1002020' end='0x1002040' /><slave name='pio_seg7.s1' start='0x1002040' end='0x1002050' /><slave name='pio_led_g.s1' start='0x1002050' end='0x1002060' /><slave name='pio_led_r.s1' start='0x1002060' end='0x1002070' /><slave name='pio_key.s1' start='0x1002070' end='0x1002080' /><slave name='pio_sw.s1' start='0x1002080' end='0x1002090' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1002090' end='0x1002098' /></address-map>]]></parameter>
-  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='sdram.s1' start='0x800000' end='0x1000000' /><slave name='sram.uas' start='0x1040000' end='0x1080000' /><slave name='nios2.jtag_debug_module' start='0x1081000' end='0x1081800' /><slave name='epcs.epcs_control_port' start='0x1081800' end='0x1082000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onewire.s1' start='0x0' end='0x8' /><slave name='sdram.s1' start='0x800000' end='0x1000000' /><slave name='sram.uas' start='0x1040000' end='0x1080000' /><slave name='nios2.jtag_debug_module' start='0x1081000' end='0x1081800' /><slave name='epcs.epcs_control_port' start='0x1081800' end='0x1082000' /><slave name='uart.s1' start='0x1082000' end='0x1082020' /><slave name='timer.s1' start='0x1082020' end='0x1082040' /><slave name='pio_seg7.s1' start='0x1082040' end='0x1082050' /><slave name='pio_led_g.s1' start='0x1082050' end='0x1082060' /><slave name='pio_led_r.s1' start='0x1082060' end='0x1082070' /><slave name='pio_key.s1' start='0x1082070' end='0x1082080' /><slave name='pio_sw.s1' start='0x1082080' end='0x1082090' /><slave name='jtag_uart.avalon_jtag_slave' start='0x1082090' end='0x1082098' /></address-map>]]></parameter>
+  <parameter name="clockFrequency" value="24000000" />
   <parameter name="deviceFamilyName" value="Cyclone II" />
-  <parameter name="internalIrqMaskSystemInfo" value="15" />
+  <parameter name="internalIrqMaskSystemInfo" value="31" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="deviceFeaturesSystemInfo">M512_MEMORY 0 M4K_MEMORY 1 M9K_MEMORY 0 M20K_MEMORY 0 M144K_MEMORY 0 MRAM_MEMORY 0 MLAB_MEMORY 0 ESB 0 EPCS 1 DSP 0 EMUL 1 HARDCOPY 0 LVDS_IO 0 ADDRESS_STALL 1 TRANSCEIVER_3G_BLOCK 0 TRANSCEIVER_6G_BLOCK 0 DSP_SHIFTER_BLOCK 0</parameter>
   <parameter name="tightlyCoupledDataMaster0MapParam" value="" />
@@ -429,7 +478,7 @@
   <parameter name="TRP" value="20.0" />
   <parameter name="TWR" value="14.0" />
   <parameter name="casLatency" value="2" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="24000000" />
   <parameter name="columnWidth" value="8" />
   <parameter name="dataWidth" value="16" />
   <parameter name="generateSimulationModel" value="false" />
@@ -447,7 +496,7 @@
  </module>
  <module kind="altera_avalon_uart" version="11.0" enabled="1" name="uart">
   <parameter name="baud" value="115200" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="24000000" />
   <parameter name="dataBits" value="8" />
   <parameter name="fixedBaud" value="true" />
   <parameter name="parity" value="NONE" />
@@ -486,7 +535,7 @@
   <parameter name="periodUnits" value="MSEC" />
   <parameter name="resetOutput" value="false" />
   <parameter name="snapshot" value="true" />
-  <parameter name="systemFrequency" value="50000000" />
+  <parameter name="systemFrequency" value="24000000" />
   <parameter name="timeoutPulseOutput" value="false" />
   <parameter name="timerPreset" value="CUSTOM" />
  </module>
@@ -494,7 +543,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="24000000" />
   <parameter name="direction" value="Output" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -517,7 +566,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="24000000" />
   <parameter name="direction" value="Output" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -531,7 +580,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="24000000" />
   <parameter name="direction" value="Output" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -545,7 +594,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="24000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -559,7 +608,7 @@
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
-  <parameter name="clockRate" value="50000000" />
+  <parameter name="clockRate" value="24000000" />
   <parameter name="direction" value="Input" />
   <parameter name="edgeType" value="RISING" />
   <parameter name="generateIRQ" value="false" />
@@ -569,13 +618,88 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="10" />
  </module>
+ <module
+   kind="altera_generic_tristate_controller"
+   version="11.0"
+   enabled="1"
+   name="sram">
+  <parameter name="TCM_ADDRESS_W" value="18" />
+  <parameter name="TCM_DATA_W" value="16" />
+  <parameter name="TCM_BYTEENABLE_W" value="2" />
+  <parameter name="TCM_READ_WAIT" value="1" />
+  <parameter name="TCM_WRITE_WAIT" value="1" />
+  <parameter name="TCM_SETUP_WAIT" value="1" />
+  <parameter name="TCM_DATA_HOLD" value="1" />
+  <parameter name="TCM_MAX_PENDING_READ_TRANSACTIONS" value="1" />
+  <parameter name="TCM_TURNAROUND_TIME" value="2" />
+  <parameter name="TCM_TIMING_UNITS" value="1" />
+  <parameter name="TCM_READLATENCY" value="2" />
+  <parameter name="TCM_SYMBOLS_PER_WORD" value="2" />
+  <parameter name="USE_READDATA" value="1" />
+  <parameter name="USE_WRITEDATA" value="1" />
+  <parameter name="USE_READ" value="1" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="USE_BEGINTRANSFER" value="0" />
+  <parameter name="USE_BYTEENABLE" value="1" />
+  <parameter name="USE_CHIPSELECT" value="1" />
+  <parameter name="USE_LOCK" value="0" />
+  <parameter name="USE_ADDRESS" value="1" />
+  <parameter name="USE_WAITREQUEST" value="0" />
+  <parameter name="USE_WRITEBYTEENABLE" value="0" />
+  <parameter name="USE_OUTPUTENABLE" value="1" />
+  <parameter name="USE_RESETREQUEST" value="0" />
+  <parameter name="USE_IRQ" value="0" />
+  <parameter name="USE_RESET_OUTPUT" value="0" />
+  <parameter name="ACTIVE_LOW_READ" value="0" />
+  <parameter name="ACTIVE_LOW_LOCK" value="0" />
+  <parameter name="ACTIVE_LOW_WRITE" value="1" />
+  <parameter name="ACTIVE_LOW_CHIPSELECT" value="1" />
+  <parameter name="ACTIVE_LOW_BYTEENABLE" value="1" />
+  <parameter name="ACTIVE_LOW_OUTPUTENABLE" value="1" />
+  <parameter name="ACTIVE_LOW_WRITEBYTEENABLE" value="0" />
+  <parameter name="ACTIVE_LOW_WAITREQUEST" value="0" />
+  <parameter name="ACTIVE_LOW_BEGINTRANSFER" value="0" />
+  <parameter name="ACTIVE_LOW_RESETREQUEST" value="0" />
+  <parameter name="ACTIVE_LOW_IRQ" value="0" />
+  <parameter name="ACTIVE_LOW_RESET_OUTPUT" value="0" />
+  <parameter name="CHIPSELECT_THROUGH_READLATENCY" value="0" />
+  <parameter name="IS_MEMORY_DEVICE" value="1" />
+  <parameter name="MODULE_ASSIGNMENT_KEYS" value="" />
+  <parameter name="MODULE_ASSIGNMENT_VALUES" value="" />
+  <parameter name="INTERFACE_ASSIGNMENT_KEYS" value="" />
+  <parameter name="INTERFACE_ASSIGNMENT_VALUES" value="" />
+  <parameter name="CLOCK_RATE" value="24000000" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="1" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="1" />
+  <parameter name="AUTO_TRISTATECONDUIT_MASTERS" value="" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
+ </module>
+ <module
+   kind="altera_tristate_conduit_bridge"
+   version="11.0"
+   enabled="1"
+   name="sram_tri">
+  <parameter name="INTERFACE_INFO"><![CDATA[<info><slave name="tcs"><master name="sram.tcm"><pin role="" width="1" type="Invalid" output_name="" output_enable_name="" input_name="" /><pin role="address" width="18" type="Output" output_name="tcm_address_out" output_enable_name="" input_name="" /><pin role="write_n" width="1" type="Output" output_name="tcm_write_n_out" output_enable_name="" input_name="" /><pin role="byteenable_n" width="2" type="Output" output_name="tcm_byteenable_n_out" output_enable_name="" input_name="" /><pin role="data" width="16" type="Bidirectional" output_name="tcm_data_out" output_enable_name="tcm_data_outen" input_name="tcm_data_in" /><pin role="outputenable_n" width="1" type="Output" output_name="tcm_outputenable_n_out" output_enable_name="" input_name="" /><pin role="read" width="1" type="Output" output_name="tcm_read_out" output_enable_name="" input_name="" /><pin role="chipselect_n" width="1" type="Output" output_name="tcm_chipselect_n_out" output_enable_name="" input_name="" /></master></slave></info>]]></parameter>
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="24000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
+ </module>
+ <module kind="sockit_owm" version="1.3" enabled="1" name="onewire">
+  <parameter name="OVD_E" value="true" />
+  <parameter name="CDR_E" value="false" />
+  <parameter name="BDW" value="32" />
+  <parameter name="BAW" value="1" />
+  <parameter name="OWN" value="1" />
+  <parameter name="BTP_N" value="5.0" />
+  <parameter name="BTP_O" value="1.0" />
+  <parameter name="F_CLK" value="24000000" />
+ </module>
  <connection
    kind="avalon"
    version="11.0"
    start="nios2.instruction_master"
    end="nios2.jtag_debug_module">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01001000" />
+  <parameter name="baseAddress" value="0x01081000" />
  </connection>
  <connection
    kind="avalon"
@@ -583,19 +707,18 @@
    start="nios2.data_master"
    end="nios2.jtag_debug_module">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01001000" />
+  <parameter name="baseAddress" value="0x01081000" />
  </connection>
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="nios2.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="nios2.reset_n" />
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="sdram.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="sdram.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="sdram.reset" />
  <connection
    kind="avalon"
@@ -609,24 +732,24 @@
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00800000" />
  </connection>
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="uart.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="uart.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="uart.reset" />
  <connection kind="avalon" version="11.0" start="nios2.data_master" end="uart.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01002000" />
+  <parameter name="baseAddress" value="0x01082000" />
  </connection>
  <connection kind="interrupt" version="11.0" start="nios2.d_irq" end="uart.irq">
   <parameter name="irqNumber" value="2" />
  </connection>
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="jtag_uart.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="jtag_uart.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="jtag_uart.reset" />
  <connection
    kind="avalon"
@@ -634,22 +757,22 @@
    start="nios2.data_master"
    end="jtag_uart.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01002090" />
+  <parameter name="baseAddress" value="0x01082090" />
  </connection>
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="timer.reset" />
  <connection kind="avalon" version="11.0" start="nios2.data_master" end="timer.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01002020" />
+  <parameter name="baseAddress" value="0x01082020" />
  </connection>
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_seg7.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="pio_seg7.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="pio_seg7.reset" />
  <connection
    kind="avalon"
@@ -657,13 +780,13 @@
    start="nios2.data_master"
    end="pio_seg7.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01002040" />
+  <parameter name="baseAddress" value="0x01082040" />
  </connection>
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="epcs.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="epcs.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="epcs.reset" />
  <connection
    kind="avalon"
@@ -671,7 +794,7 @@
    start="nios2.data_master"
    end="epcs.epcs_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01001800" />
+  <parameter name="baseAddress" value="0x01081800" />
  </connection>
  <connection
    kind="avalon"
@@ -679,7 +802,7 @@
    start="nios2.instruction_master"
    end="epcs.epcs_control_port">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01001800" />
+  <parameter name="baseAddress" value="0x01081800" />
  </connection>
  <connection
    kind="reset"
@@ -716,12 +839,12 @@
    version="11.0"
    start="nios2.jtag_debug_module_reset"
    end="epcs.reset" />
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="timer.clk" />
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_led_g.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="timer.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="pio_led_g.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="pio_led_g.reset" />
  <connection
    kind="reset"
@@ -734,13 +857,13 @@
    start="nios2.data_master"
    end="pio_led_g.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01002050" />
+  <parameter name="baseAddress" value="0x01082050" />
  </connection>
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_led_r.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="pio_led_r.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="pio_led_r.reset" />
  <connection
    kind="avalon"
@@ -748,32 +871,32 @@
    start="nios2.data_master"
    end="pio_led_r.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01002060" />
+  <parameter name="baseAddress" value="0x01082060" />
  </connection>
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="pio_key.reset" />
  <connection
    kind="reset"
    version="11.0"
    start="nios2.jtag_debug_module_reset"
    end="pio_key.reset" />
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_key.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="pio_key.clk" />
  <connection
    kind="avalon"
    version="11.0"
    start="nios2.data_master"
    end="pio_key.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01002070" />
+  <parameter name="baseAddress" value="0x01082070" />
  </connection>
- <connection kind="clock" version="11.0" start="clk_50MHz.clk" end="pio_sw.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="pio_sw.clk" />
  <connection
    kind="reset"
    version="11.0"
-   start="clk_50MHz.clk_reset"
+   start="clk_24MHz.clk_reset"
    end="pio_sw.reset" />
  <connection
    kind="reset"
@@ -786,7 +909,7 @@
    start="nios2.data_master"
    end="pio_sw.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x01002080" />
+  <parameter name="baseAddress" value="0x01082080" />
  </connection>
  <connection
    kind="reset"
@@ -805,5 +928,71 @@
    start="nios2.d_irq"
    end="jtag_uart.irq">
   <parameter name="irqNumber" value="3" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="nios2.clk" />
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="sram.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_24MHz.clk_reset"
+   end="sram.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="sram.reset" />
+ <connection kind="avalon" version="11.0" start="nios2.data_master" end="sram.uas">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01040000" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.instruction_master"
+   end="sram.uas">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x01040000" />
+ </connection>
+ <connection kind="clock" version="11.0" start="clk_24MHz.clk" end="sram_tri.clk" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_24MHz.clk_reset"
+   end="sram_tri.reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="sram_tri.reset" />
+ <connection
+   kind="tristate_conduit"
+   version="11.0"
+   start="sram.tcm"
+   end="sram_tri.tcs" />
+ <connection
+   kind="clock"
+   version="11.0"
+   start="clk_24MHz.clk"
+   end="onewire.clock_reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="clk_24MHz.clk_reset"
+   end="onewire.clock_reset_reset" />
+ <connection
+   kind="reset"
+   version="11.0"
+   start="nios2.jtag_debug_module_reset"
+   end="onewire.clock_reset_reset" />
+ <connection
+   kind="avalon"
+   version="11.0"
+   start="nios2.data_master"
+   end="onewire.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+ </connection>
+ <connection kind="interrupt" version="11.0" start="nios2.d_irq" end="onewire.irq">
+  <parameter name="irqNumber" value="4" />
  </connection>
 </system>

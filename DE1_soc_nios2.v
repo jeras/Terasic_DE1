@@ -82,7 +82,7 @@ inout  [35:0] GPIO_0,       // GPIO Connection 0
 inout  [35:0] GPIO_1        // GPIO Connection 1
 );
 
-localparam FRQ = 50000000;  // 24MHz
+localparam FRQ = 24000000;  // 24MHz
 
 // system clock and reset
 wire clk, rst;
@@ -108,7 +108,7 @@ assign GPIO_0      = 36'hzzzzzzzzz;
 assign GPIO_1      = 36'hzzzzzzzzz;
 
 // set system clock to 24MHz
-assign clk = CLOCK_50;
+assign clk = CLOCK_24[0];
 assign rst = btn[0];
 
 // debouncing of command buttons (buttons are active low)
@@ -116,24 +116,34 @@ debouncer #(.CN (FRQ/100)) debouncer_i [3:0] (.clk (clk), .d_i (~KEY), .d_o (btn
 
 // soc RTL instance
 soc soc_i (
-  .clk_clk              ( clk),        //          clk.clk
-  .reset_reset_n        (~rst),        //        reset.reset_n
-  .pio_key_i_export     (btn),         //    pio_key_i.export
-  .pio_sw_i_export      (SW),          //     pio_sw_i.export
-  .pio_led_r_o_export   (LEDR),        //  pio_led_r_o.export
-  .pio_led_g_o_export   (LEDG),        //  pio_led_g_o.export
-  .pio_seg7_o_export    (seg7),        //   pio_seg7_o.export
-  .sdram_wire_cke       (DRAM_CKE),    //   sdram_wire.cke
-  .sdram_wire_cs_n      (DRAM_CS_N),   //             .cs_n
-  .sdram_wire_we_n      (DRAM_WE_N),   //             .we_n
-  .sdram_wire_cas_n     (DRAM_CAS_N),  //             .cas_n
-  .sdram_wire_ras_n     (DRAM_RAS_N),  //             .ras_n
-  .sdram_wire_ba        (DRAM_BA),     //             .ba
-  .sdram_wire_addr      (DRAM_ADDR),   //             .addr
-  .sdram_wire_dq        (DRAM_DQ),     //             .dq
-  .sdram_wire_dqm       (DRAM_DQM),    //             .dqm
-  .uart_io_txd          (UART_TXD),    //      uart_io.txd
-  .uart_io_rxd          (UART_RXD),    //             .rxd
+  .clk_clk              ( clk),        //         clk.clk
+  .reset_reset_n        (~rst),        //       reset.reset_n
+  .pio_key_i_export     (btn),         //   pio_key_i.export
+  .pio_sw_i_export      (SW),          //    pio_sw_i.export
+  .pio_led_r_o_export   (LEDR),        // pio_led_r_o.export
+  .pio_led_g_o_export   (LEDG),        // pio_led_g_o.export
+  .pio_seg7_o_export    (seg7),        //  pio_seg7_o.export
+  .sdram_wire_cke       (DRAM_CKE),    //  sdram_wire.cke
+  .sdram_wire_cs_n      (DRAM_CS_N),   //            .cs_n
+  .sdram_wire_we_n      (DRAM_WE_N),   //            .we_n
+  .sdram_wire_cas_n     (DRAM_CAS_N),  //            .cas_n
+  .sdram_wire_ras_n     (DRAM_RAS_N),  //            .ras_n
+  .sdram_wire_ba        (DRAM_BA),     //            .ba
+  .sdram_wire_addr      (DRAM_ADDR),   //            .addr
+  .sdram_wire_dq        (DRAM_DQ),     //            .dq
+  .sdram_wire_dqm       (DRAM_DQM),    //            .dqm
+  .sram_tcm_chipselect_n_out    (SRAM_CE_N),  //            .tcm_chipselect_n_out
+  .sram_tcm_write_n_out         (SRAM_WE_N),  //            .tcm_write_n_out
+  .sram_tcm_outputenable_n_out  (SRAM_OE_N),  //            .tcm_outputenable_n_out
+  .sram_tcm_read_out            (         ),  //            .tcm_read_out
+  .sram_tcm_address_out         (SRAM_ADDR),  //            .tcm_address_out
+  .sram_tcm_byteenable_n_out    (SRAM_B_N ),  //        sram.tcm_byteenable_n_out
+  .sram_tcm_data_out            (SRAM_DQ  ),  //            .tcm_data_out
+  .uart_io_txd          (UART_TXD),    //     uart_io.txd
+  .uart_io_rxd          (UART_RXD),    //            .rxd
+  .onewire_e            (owr_e),       //  onewire_io.e
+  .onewire_p            (owr_p),       //            .p
+  .onewire_i            (owr_i)        //            .i
 );
 
 // soc_i (
@@ -145,10 +155,6 @@ soc soc_i (
 //   .read_n_to_the_cfi_flash         (FL_OE_N),
 //   .address_to_the_cfi_flash        (FL_ADDR),
 //   .data_to_and_from_the_cfi_flash  (FL_DQ),
-//   // onewire
-//   .owr_p_from_the_onewire          (owr_p),
-//   .owr_e_from_the_onewire          (owr_e),
-//   .owr_i_to_the_onewire            (owr_i)
 // );
 
 // 1-wire
@@ -156,8 +162,12 @@ assign PS2_DAT = (owr_p [0] | owr_e [0]) ? owr_p [0] : 1'bz;
 assign PS2_CLK = (owr_p [1] | owr_e [1]) ? owr_p [1] : 1'bz;
 assign owr_i = {PS2_CLK, PS2_DAT};
 
+// SRAM and Flash silence
+assign FL_CE_N   = 1'b1;
+
 // SDRAM Interface
 assign DRAM_CLK = ~clk;  // SDRAM Clock
+
 // Flash Interface
 assign FL_RST_N = ~rst;  // FLASH Reset
 
